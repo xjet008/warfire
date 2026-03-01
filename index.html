@@ -214,7 +214,7 @@
     100%{ transform:translate(var(--sx),var(--sy)) scale(0); opacity:0; }
   }
 
-  .hero-content { position: relative; z-index: 2; }
+  .hero-content { position: relative; z-index: 2; width: 100%; text-align: center; }
 
   .tag-line {
     font-family: 'Share Tech Mono', monospace;
@@ -223,9 +223,12 @@
     color: var(--fire);
     text-transform: uppercase;
     margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
     animation: fadeDown 1s ease both;
     position: relative;
-    display: inline-block;
+    display: block;
+    text-align: center;
   }
 
   .tag-line::before {
@@ -263,6 +266,8 @@
     filter: drop-shadow(0 0 60px rgba(255,100,0,0.45)) drop-shadow(0 0 120px rgba(255,69,0,0.2));
     animation: fadeDown 1.2s 0.15s cubic-bezier(0.16,1,0.3,1) both, flamePulse 3s 1.4s ease infinite;
     position: relative;
+    display: block;
+    text-align: center;
   }
 
   @keyframes flamePulse {
@@ -270,7 +275,7 @@
     50%    { filter: drop-shadow(0 0 90px rgba(255,150,0,0.7))  drop-shadow(0 0 180px rgba(255,69,0,0.4)); }
   }
 
-  .name-wrap { position: relative; display: inline-block; }
+  .name-wrap { position: relative; display: block; text-align: center; }
 
   .name-wrap::before, .name-wrap::after {
     content: 'WARFIRE';
@@ -279,10 +284,12 @@
     line-height: inherit;
     letter-spacing: inherit;
     position: absolute;
-    top: 0; left: 0;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     pointer-events: none;
+    white-space: nowrap;
   }
   .name-wrap::before {
     background: linear-gradient(180deg, var(--fire) 0%, transparent 100%);
